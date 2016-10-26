@@ -33,8 +33,8 @@ def offset_gaussian():
   assert abs(44.33016 - gbm._model_json['output']['init_f']) < 1e-5, "expected init_f to be {0}, but got {1}". \
     format(44.33016, gbm._model_json['output']['init_f'])
   assert abs(1491.19431867 - gbm.mse()) < 1e-2, "expected mse to be {0}, but got {1}".format(1491.19431867, gbm.mse())
-  assert abs(49.2343748482 - predictions.mean()[0]) < 1e-2, "expected prediction mean to be {0}, but got {1}". \
-    format(49.2343748482, predictions.mean()[0])
+  assert abs(49.2343748482 - predictions.mean().getrow()[0]) < 1e-2, "expected prediction mean to be {0}, but got {1}". \
+    format(49.2343748482, predictions.mean().getrow()[0])
   assert abs(-44.9779991989 - predictions.min()) < 1e-2, "expected prediction min to be {0}, but got {1}". \
     format(-44.9779991989, predictions.min())
   assert abs(206.793169165 - predictions.max()) < 1e-2, "expected prediction max to be {0}, but got {1}". \
